@@ -8,7 +8,7 @@ class Post
       :guid => Rcqrs::Guid.create, 
       :title => title, 
       :content => content, 
-      :published_at => Time.now)
+      :published_at => Time.zone.now)
     create_from_event(event)
   end
 

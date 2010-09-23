@@ -1,0 +1,66 @@
+#header #logo {
+	padding-top: 10px;
+	font-size: 2em;
+}
+
+.sf-menu { margin-top: 10px;}
+.sf-menu a { padding: 5px 10px; }
+
+#main .container .content .blogpost pre {
+	background-color: ghostWhite;
+	border-bottom-color: #DEDEDE;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-left-color: #DEDEDE;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-color: #DEDEDE;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-color: #DEDEDE;
+	border-top-style: solid;
+	border-top-width: 1px;
+	color: #444;
+	display: block;
+	font-family: Monaco, 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	height: 16px;
+	line-height: 18px;
+	margin-bottom: 12px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 12px;
+	overflow-x: auto;
+	overflow-y: auto;
+	padding-bottom: 6px;
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 6px;
+	white-space: pre;
+}
+
+#main .container .content .blogpost code {
+	border-color: #444;
+	border-style: none;
+	border-width: 0px;
+	color: #444;
+	display: inline;
+	font-family: Monaco, 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	height: 0px;
+	line-height: 16px;
+	margin: 0px;
+	overflow-x: visible;
+	overflow-y: visible;
+	padding: 0px;
+	white-space: pre;
+	width: 0px;
+}
+
+#footer .copyright { font-size: 0.8em; }

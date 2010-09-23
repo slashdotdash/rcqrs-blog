@@ -1,0 +1,28 @@
+<% content_for :head do -%>
+	<%= auto_discovery_link_tag(:atom, feed_path(:atom)) %>
+<% end -%>
+
+<% content_for :sidebar do -%>
+	<div class="widget widget_categories">
+		<h3>Categories</h3>
+		<ul>
+			<li class="cat-item cat-item-3"><a href="http://demo.slimmity.com/simplefolio/category/comedy/" title="View all posts filed under Comedy">Comedy</a></li>
+		</ul>
+	</div>
+<% end -%>
+
+<% for post in @posts -%>
+	<%= render 'post', :post => post %>
+<% end -%>
+
+<!-- <div class="wp-pagenavi">
+	<span class="pages">Page 1 of 6</span>
+	<span class="current">1</span>
+	<a href="http://demo.slimmity.com/simplefolio/blog/page/2/" class="page" title="2">2</a>
+	<a href="http://demo.slimmity.com/simplefolio/blog/page/3/" class="page" title="3">3</a>
+	<a href="http://demo.slimmity.com/simplefolio/blog/page/4/" class="page" title="4">4</a>
+	<a href="http://demo.slimmity.com/simplefolio/blog/page/5/" class="page" title="5">5</a>
+	<a href="http://demo.slimmity.com/simplefolio/blog/page/2/" class="nextpostslink">»</a>
+	<span class="extend">...</span>
+	<a href="http://demo.slimmity.com/simplefolio/blog/page/6/" class="last" title="Last &raquo;">Last »</a>
+</div> -->

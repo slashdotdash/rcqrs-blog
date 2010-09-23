@@ -1,8 +1,10 @@
 RcqrsBlog::Application.routes.draw do
-  root :to => 'home#index'
-  match 'feed' => 'home#index', :as => :feed
+  root :to => 'posts#index'
+  match 'feed' => 'posts#index', :as => :feed
   
   # Queries
+  match ':year/:month/:day/:slug' => 'posts#show', :as => :post_slug,
+    :year => /[0-9]{4}/, :month => /[0-9]{1,2}/, :day => /[0-9]{1,2}/, :slug => /(\w|\-)+/
   
   # Commands
   resource :create_blog, :controller => 'create_blog'

@@ -1,8 +1,0 @@
-<% content_for :head do -%>
-	<%= auto_discovery_link_tag(:atom, feed_path(:atom)) %>
-<% end -%>
-
-<% for @post in @posts -%>
-	<h2><%= @post.title %></h2>
-	<%=raw @post.html_content %>
-<% end -%>

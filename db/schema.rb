@@ -28,6 +28,10 @@ ActiveRecord::Schema.define(:version => 20100923001224) do
     t.text     "raw_content",                  :null => false
     t.text     "html_content",                 :null => false
     t.integer  "comment_count", :default => 0, :null => false
+    t.integer  "year",                         :null => false
+    t.integer  "month",                        :null => false
+    t.integer  "day",                          :null => false
+    t.string   "slug",                         :null => false
     t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -35,5 +39,6 @@ ActiveRecord::Schema.define(:version => 20100923001224) do
 
   add_index "post_reports", ["guid"], :name => "index_post_reports_on_guid"
   add_index "post_reports", ["published_at"], :name => "index_post_reports_on_published_at"
+  add_index "post_reports", ["year", "month", "day", "slug"], :name => "index_post_reports_on_year_and_month_and_day_and_slug"
 
 end

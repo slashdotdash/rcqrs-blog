@@ -2,18 +2,49 @@
 <html>
 <head>
   <title>rcqrs-blog</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag 'jquery-1.4.2.min' %>
+  <%= stylesheet_link_tag 'style', 'site' %>
+  <%= javascript_include_tag 'jquery-1.4.2.min', 'cufon-yui', 'fonts/Museo.font', 'DD_roundies', 'hoverIntent', 'superfish', 's3Slider', 'application' %>
+	<%= render 'shared/ie6_hacks' %>
+	
 	<%= yield :head %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-	<% if @blog -%>
-		<h1><%= @blog.name %></h1>
-		<h2><%= @blog.tagline %></h2>
-		<hr />
-	<% end -%>
-	
-	<%= yield %>
+	<div id="wrapper">
+		<div id="header">
+			<div id="logo">
+				<% if @blog -%>
+					<h1><%= link_to @blog.name, root_path %> - <%= @blog.tagline %></h1>
+				<% end -%>
+			</div>
+			
+			<div id="pagenav">
+				<ul class="sf-menu sf-js-enabled sf-shadow" id="nav">
+					<li class="page_item page-item-3"><a href="http://demo.slimmity.com/simplefolio/" title="Home"><cufon class="cufon cufon-canvas" alt="Home" style="width: 52px; height: 18px; "><canvas width="63" height="21" style="width: 63px; height: 21px; top: -3px; left: -1px; "></canvas><cufontext>Home</cufontext></cufon></a></li>
+					<li class="page_item page-item-7"><a href="http://demo.slimmity.com/simplefolio/about/" title="About"><cufon class="cufon cufon-canvas" alt="About" style="width: 52px; height: 18px; "><canvas width="66" height="21" style="width: 66px; height: 21px; top: -3px; left: -1px; "></canvas><cufontext>About</cufontext></cufon></a></li>
+					<li class="page_item page-item-4 current_page_item"><a href="./SimpleFolio Demo   Just another WordPress weblog_files/SimpleFolio Demo   Just another WordPress weblog.html" title="Blog"><cufon class="cufon cufon-canvas" alt="Blog" style="width: 38px; height: 18px; "><canvas width="48" height="21" style="width: 48px; height: 21px; top: -3px; left: -1px; "></canvas><cufontext>Blog</cufontext></cufon></a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div id="main">
+			<div class="container">
+				<div class="content">
+					<%= yield %>
+				</div>
+				
+				<div class="sidebar">
+					<%= render :partial => 'shared/search' %>
+					<%= render :partial => 'shared/subscriptions' %>
+					
+					<%= yield :sidebar %>
+				</div>
+			</div>
+		</div>
+
+		<div id="footer">
+			<%= render :partial => 'shared/footer' %>
+		</div>
+	</div>
 </body>
 </html>
