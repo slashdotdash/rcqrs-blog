@@ -8,8 +8,12 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
-
+	<% if @blog -%>
+		<h1><%= @blog.name %></h1>
+		<h2><%= @blog.tagline %></h2>
+		<hr />
+	<% end -%>
+	
+	<%= yield %>
 </body>
 </html>

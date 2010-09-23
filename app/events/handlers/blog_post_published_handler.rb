@@ -6,7 +6,8 @@ class BlogPostPublishedHandler < Events::Handlers::BaseHandler
       :guid => event.guid,
       :title => event.title,
       :raw_content => event.content,
-      :html_content => html_content
+      :html_content => html_content,
+      :published_at => event.published_at
     )
   end
 end

@@ -11,6 +11,12 @@ module NavigationHelpers
     when /the home\s?page/
       '/'
 
+    when /the create blog page/
+      new_create_blog_path
+      
+    when /the publish post page/
+      new_publish_blog_post_path
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

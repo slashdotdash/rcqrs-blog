@@ -1,12 +1,12 @@
 RcqrsBlog::Application.routes.draw do
-  resource :create_blog_post, :controller => 'create_blog_post'
-
   root :to => 'home#index'
+  match 'feed' => 'home#index', :as => :feed
   
   # Queries
   
   # Commands
   resource :create_blog, :controller => 'create_blog'
+  resource :publish_blog_post, :controller => 'publish_blog_post'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

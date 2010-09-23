@@ -6,6 +6,8 @@ class CreateBlogReports < ActiveRecord::Migration
       t.string :tagline, :null => false
       t.timestamps
     end
+    
+    add_index :blog_reports, :guid
   end
 
   def self.down

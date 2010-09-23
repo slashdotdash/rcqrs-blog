@@ -19,11 +19,14 @@ gem 'rcqrs'
 gem 'rcqrs-rails'
 
 group :test, :development do
-	gem 'capybara'
-  gem 'database_cleaner'
-  gem 'cucumber-rails'
-  gem 'cucumber'
 	gem 'rspec-rails', '>= 2.0.0.beta.22'
-  gem 'spork'
-  gem 'launchy'
+end
+
+group :cucumber do
+	gem 'capybara'
+	gem 'database_cleaner'
+	gem 'cucumber-rails'
+	gem 'cucumber'
+	gem 'spork'
+	gem 'launchy'
 end

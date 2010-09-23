@@ -13,12 +13,14 @@
 ActiveRecord::Schema.define(:version => 20100923001224) do
 
   create_table "blog_reports", :force => true do |t|
-    t.string   "guid"
-    t.string   "name"
-    t.string   "tagline"
+    t.string   "guid",       :null => false
+    t.string   "name",       :null => false
+    t.string   "tagline",    :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "blog_reports", ["guid"], :name => "index_blog_reports_on_guid"
 
   create_table "post_reports", :force => true do |t|
     t.string   "guid",                         :null => false
@@ -26,8 +28,12 @@ ActiveRecord::Schema.define(:version => 20100923001224) do
     t.text     "raw_content",                  :null => false
     t.text     "html_content",                 :null => false
     t.integer  "comment_count", :default => 0, :null => false
+    t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "post_reports", ["guid"], :name => "index_post_reports_on_guid"
+  add_index "post_reports", ["published_at"], :name => "index_post_reports_on_published_at"
 
 end

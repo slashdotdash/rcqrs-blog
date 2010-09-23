@@ -6,8 +6,12 @@ class CreatePostReports < ActiveRecord::Migration
       t.text :raw_content, :null => false
       t.text :html_content, :null => false
       t.integer :comment_count, :default => 0, :null => false
+      t.datetime :published_at
       t.timestamps
     end
+    
+    add_index :post_reports, :guid
+    add_index :post_reports, :published_at
   end
 
   def self.down
