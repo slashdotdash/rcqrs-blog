@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20100923001224) do
     t.string   "guid",                         :null => false
     t.string   "title",                        :null => false
     t.text     "raw_content",                  :null => false
-    t.text     "content",                      :null => false
+    t.text     "html_content",                 :null => false
     t.integer  "comment_count", :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"

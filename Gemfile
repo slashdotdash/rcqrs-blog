@@ -25,6 +25,15 @@ gem "rcqrs-rails"
 #   gem 'webrat'
 # end
 
+gem 'rspec'
+gem 'capybara'
+gem 'database_cleaner'
+gem 'cucumber-rails'
+gem 'cucumber'
+gem 'rspec-rails'
+gem 'spork'
+gem 'launchy'
+
 group :spec do
-  gem "rspec"
+  
 end

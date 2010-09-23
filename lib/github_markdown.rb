@@ -1,7 +1,7 @@
 require 'rdiscount'
 require 'digest/md5'
 
-class Markdown
+class GithubMarkdown
   def self.to_html(text)
     text = gfm(text)
     markdown = RDiscount.new(text) 

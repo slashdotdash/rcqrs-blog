@@ -1,4 +1,4 @@
-class CreateBlogPostCommand
+class PublishBlogPostCommand
   extend Commands::ActiveModel
   
   initializer :title, :content, :attr_reader => true

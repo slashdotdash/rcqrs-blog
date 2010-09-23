@@ -20,6 +20,7 @@ module RcqrsBlog
       #{config.root}/app/events
       #{config.root}/app/events/handlers
       #{config.root}/app/validators
+      #{config.root}/lib
     )
 
     # Only load the plugins named here, in the order given (default is alphabetical).
