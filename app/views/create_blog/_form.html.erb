@@ -1,0 +1,26 @@
+<%= form_for(@command, :url => create_blog_path, :as => :command) do |f| %>
+  <% if @command.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@command.errors.count, "error") %> prohibited this blog from being created:</h2>
+    <ul>
+    <% @command.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+	<div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+	<div class="field">
+    <%= f.label :tagline %><br />
+    <%= f.text_field :tagline %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit 'Create' %>
+  </div>
+<% end %>

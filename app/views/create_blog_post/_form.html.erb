@@ -1,0 +1,32 @@
+<%= form_for(@command, :url => create_blog_post_path, :as => :command) do |f| %>
+  <% if @command.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@command.errors.count, "error") %> prohibited this blog from being created:</h2>
+    <ul>
+    <% @command.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+	<div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+
+	<div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit 'Create Blog Post' %>
+  </div>
+
+	<p>Uses <a href="http://github.github.com/github-flavored-markdown/">GitHub Flavored Markdown</a> for formatting.</p>
+	
+	<h2>Live preview</h2> 
+
+	<div id="result"></div>
+<% end %>
