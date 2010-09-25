@@ -15,7 +15,7 @@ protected
   # Redirect to create a new blog if none exists
   def find_blog
     @blog ||= BlogReport.first
-    redirect_to new_create_blog_path and return false if @blog.nil?
+    redirect_to new_admin_create_blog_path and return false if @blog.nil?
   end
   
   def show_post_url(post, options={})

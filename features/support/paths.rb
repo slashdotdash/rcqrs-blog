@@ -12,10 +12,14 @@ module NavigationHelpers
       '/'
 
     when /the create blog page/
-      new_create_blog_path
+      new_admin_create_blog_path
       
     when /the publish post page/
-      new_publish_blog_post_path
+      new_admin_publish_blog_post_path
+      
+    when /view the blog post "(.*)"$/
+      post = PostReport.find_by_title($1)
+      post_slug_path(:year => post.year, :month => post.month, :day => post.day, :slug => post.slug)
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

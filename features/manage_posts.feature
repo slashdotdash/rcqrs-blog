@@ -9,7 +9,7 @@ Feature: Manage blog posts
 		When I fill in "command_title" with "CQRS FTW!"
 		And I fill in "command_content" with "Discover command-query responsibility segregation"
     And I press "Publish"
-		Then a new blog post should be published
+		Then I should have 1 blog post
 		
 	Scenario: Edit existing blog post
 	Scenario: Delete existing blog post

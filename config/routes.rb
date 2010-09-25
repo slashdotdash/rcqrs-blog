@@ -7,8 +7,6 @@ RcqrsBlog::Application.routes.draw do
     :year => /[0-9]{4}/, :month => /[0-9]{1,2}/, :day => /[0-9]{1,2}/, :slug => /(\w|\-)+/
 
   # Commands
-  resource :create_blog, :controller => 'create_blog'
-  resource :publish_blog_post, :controller => 'publish_blog_post'
   resource :submit_comment, :controller => 'submit_comment'
   
   # Admin-only resources
@@ -17,6 +15,8 @@ RcqrsBlog::Application.routes.draw do
     resources :comments
 
     # Commands
+    resource :create_blog, :controller => 'create_blog'
+    resource :publish_blog_post, :controller => 'publish_blog_post'
     resource :approve_comment, :controller => 'approve_comment'
   end
   

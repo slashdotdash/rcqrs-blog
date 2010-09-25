@@ -1,4 +1,4 @@
-<%= form_for(@command, :url => create_blog_path, :as => :command) do |f| %>
+<%= form_for(@command, :url => admin_create_blog_path, :as => :command) do |f| %>
   <% if @command.errors.any? %>
   <div id="errorExplanation">
     <h2><%= pluralize(@command.errors.count, "error") %> prohibited this blog from being created:</h2>
