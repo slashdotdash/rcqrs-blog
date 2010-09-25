@@ -5,6 +5,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'mongrel'
 gem 'mysql'
 gem 'rdiscount'
+gem 'gravtastic', '>= 2.1.0'
 
 # Deploy with Capistrano
 # gem 'capistrano'

@@ -1,0 +1,7 @@
+<%= form_for(command, :url => admin_approve_comment_path, :as => :command) do |f| %>
+  <div class="actions">
+		<%= f.hidden_field :post_id %>
+		<%= f.hidden_field :comment_id %>
+    <%= f.submit 'Approve' %>
+  </div>
+<% end %>

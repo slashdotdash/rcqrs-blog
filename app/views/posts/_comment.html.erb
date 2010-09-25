@@ -1,0 +1,20 @@
+<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1 parent" id="comment-16">
+	<div id="comment-<%= comment.guid %>" class="comment-body">
+		<div class="comment-author vcard">
+			<%= image_tag comment.gravatar_url(:size => 32), :class => 'avatar avatar-32 photo', :size => '32' %>			
+			<cite class="fn">
+				<% unless comment.website.blank? -%>
+					<%= link_to comment.author, comment.website %>
+				<% else -%>
+					<%= comment.author %>
+				<% end -%>
+				</cite> 
+			<span class="says">says:</span>
+		</div>
+		<div class="comment-meta commentmetadata">
+			<%= link_to comment.created_at.to_s(:ordinal), :anchor => "comment-#{comment.guid}" %>
+		</div>
+
+		<p><%= comment.comment %></p>
+	</div>
+</li>

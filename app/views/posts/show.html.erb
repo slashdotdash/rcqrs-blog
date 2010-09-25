@@ -1,3 +1,9 @@
 <%= render 'post', :post => @post %>
 
-<!-- TODO: Comments -->
+<h3 id="comments"><%= pluralize @post.comment_count, 'Responses' %> so far.</h3>
+
+<ol class="commentlist">
+	<%= render :partial => 'comment', :collection => @comments %>
+</ol>
+
+<%= render 'submit_comment/form', :command => @submit_comment_command %>

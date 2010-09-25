@@ -1,9 +1,9 @@
 <div class="blogpost">
 	<div class="comments">
-		<%= link_to post.comment_count, make_post_url(post, :anchor => 'comments') %>
+		<%= link_to post.comment_count, show_post_url(post, :anchor => 'comments') %>
 	</div>
 
-	<h2 class="title"><%= link_to post.title, make_post_url(post) %></h2>
+	<h2 class="title"><%= link_to post.title, show_post_url(post) %></h2>
 	<div class="meta">Published <%= post.published_at.to_s(:ordinal) %> by admin</div>
 	<div class="entry">
 		<%=raw post.html_content %>

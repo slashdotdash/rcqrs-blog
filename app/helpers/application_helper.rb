@@ -1,6 +1,5 @@
 module ApplicationHelper
-  def make_post_url(post, options={})
-    options.merge!(:year => post.year, :month => post.month, :day => post.day, :slug => post.slug)
-    post_slug_path(options)
+  def flash_helper
+    [:notice, :warning, :message].map { |f| content_tag(:div, flash[f], :class => f) if flash[f] }
   end
 end

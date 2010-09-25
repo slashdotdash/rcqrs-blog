@@ -1,0 +1,30 @@
+<h1>Admin &raquo; Pending Comments</h1>
+
+<% unless @pending.empty? -%>
+	<table>
+		<thead>
+			<tr>
+				<th>Author</th>
+				<th>Website</th>
+				<th>Comment</th>
+				<th>In Response To</th>
+				<th />
+			</tr>
+		</thead>
+		<tbody>
+			<% for comment in @pending -%>
+			<tr>
+				<td><%= comment.author %><br /><%= mail_to comment.email %></td>
+				<td><%= link_to comment.website, comment.website %></td>
+				<td><%= comment.comment %></td>
+				<td><%= comment.post_title %></td>
+				<td>
+					<%= render 'admin/approve_comment/form', :command => ApproveCommentCommand.new(:post_id => comment.post_id, :comment_id => comment.guid) %>
+				</td>
+			</tr>
+			<% end -%>
+		</tbody>
+	</table>
+<% else -%>
+	<p>There are no comments awaiting moderation.</p>
+<% end -%>

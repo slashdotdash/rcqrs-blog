@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100923001224) do
+ActiveRecord::Schema.define(:version => 20100923194622) do
 
   create_table "blog_reports", :force => true do |t|
     t.string   "guid",       :null => false
@@ -21,6 +21,23 @@ ActiveRecord::Schema.define(:version => 20100923001224) do
   end
 
   add_index "blog_reports", ["guid"], :name => "index_blog_reports_on_guid"
+
+  create_table "comment_reports", :force => true do |t|
+    t.string   "guid"
+    t.string   "post_id"
+    t.string   "post_title"
+    t.string   "author"
+    t.string   "email"
+    t.string   "website"
+    t.text     "comment"
+    t.datetime "approved_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comment_reports", ["guid"], :name => "index_comment_reports_on_guid"
+  add_index "comment_reports", ["post_id", "approved_at"], :name => "index_comment_reports_on_post_id_and_approved_at"
+  add_index "comment_reports", ["post_id"], :name => "index_comment_reports_on_post_id"
 
   create_table "post_reports", :force => true do |t|
     t.string   "guid",                         :null => false

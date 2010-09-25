@@ -1,0 +1,36 @@
+<div id="comment-form">
+	<div id="respond">
+		<h3>Leave a Reply</h3>
+			<div class="cancel-comment-reply">
+				<small><a rel="nofollow" id="cancel-comment-reply-link" href="/simplefolio/2009/11/testing-the-theme-elements/#respond" style="display:none;">Click here to cancel reply.</a></small>
+			</div>
+
+		<%= form_for(command, :url => submit_comment_path, :as => :command, :html => { :id => 'commentform' }) do |f| %>
+			<% if command.errors.any? %>
+		  <div id="errorExplanation">
+		    <h2><%= pluralize(command.errors.count, "error") %> prohibited this comment from being submitted:</h2>
+		    <ul>
+		    <% command.errors.full_messages.each do |msg| %>
+		      <li><%= msg %></li>
+		    <% end %>
+		    </ul>
+		  </div>
+		  <% end %>
+	
+	    <%= f.text_field :author %>
+			<%= f.label :author, raw("Name <small>(required)</small>") %>
+			
+			<%= f.text_field :email %>
+			<%= f.label :email, raw("Mail <small>(required)</small>") %>
+			
+			<%= f.text_field :website %>
+			<%= f.label :website, "Website" %>
+			
+			<%= f.text_area :comment %>
+			
+			<%= f.hidden_field :post_id %>
+			
+			<%= f.submit 'Submit', :id=> 'commentSubmit' %>
+		<% end -%>
+	</div>
+</div>

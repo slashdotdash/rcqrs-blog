@@ -1,14 +1,24 @@
 RcqrsBlog::Application.routes.draw do
   root :to => 'posts#index'
-  match 'feed' => 'posts#index', :as => :feed
-  
+
   # Queries
+  match 'feed' => 'posts#index', :as => :feed
   match ':year/:month/:day/:slug' => 'posts#show', :as => :post_slug,
     :year => /[0-9]{4}/, :month => /[0-9]{1,2}/, :day => /[0-9]{1,2}/, :slug => /(\w|\-)+/
-  
+
   # Commands
   resource :create_blog, :controller => 'create_blog'
   resource :publish_blog_post, :controller => 'publish_blog_post'
+  resource :submit_comment, :controller => 'submit_comment'
+  
+  # Admin-only resources
+  namespace :admin do
+    # Queries
+    resources :comments
+
+    # Commands
+    resource :approve_comment, :controller => 'approve_comment'
+  end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

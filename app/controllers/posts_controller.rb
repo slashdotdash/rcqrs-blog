@@ -10,5 +10,7 @@ class PostsController < ApplicationController
   
   def show
     @post = PostReport.by_slug(params)
+    @comments = CommentReport.approved.for(@post)
+    @submit_comment_command = SubmitCommentCommand.new(:post_id => @post.guid)
   end
 end

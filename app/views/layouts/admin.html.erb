@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>rcqrs-blog</title>
+  <title>rcqrs-blog admin</title>
   <%= stylesheet_link_tag 'style', 'site' %>
   <%= javascript_include_tag 'jquery-1.4.2.min', 'cufon-yui', 'fonts/Museo.font', 'DD_roundies', 'hoverIntent', 'superfish', 's3Slider', 'application' %>
 	<%= render 'shared/ie6_hacks' %>
@@ -10,7 +10,7 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-	<div id="wrapper">
+	<div id="wrapper" class="admin">
 		<div id="header">
 			<div id="logo">
 				<% if @blog -%>
@@ -28,13 +28,6 @@
 				<div class="content">
 					<%=raw flash_helper %>
 					<%= yield %>
-				</div>
-				
-				<div class="sidebar">
-					<%= render :partial => 'shared/search' %>
-					<%= render :partial => 'shared/subscriptions' %>
-					
-					<%= yield :sidebar %>
 				</div>
 			</div>
 		</div>
