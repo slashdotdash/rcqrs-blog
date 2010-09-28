@@ -5,10 +5,13 @@ class Post
   attr_reader :comments
   
   def self.create(title, content)
+    html_content = GithubMarkdown.to_html(content)
+    
     event = BlogPostPublishedEvent.new(
       :guid => Rcqrs::Guid.create, 
       :title => title, 
-      :content => content, 
+      :raw_content => content,
+      :html_content => html_content,
       :published_at => Time.zone.now)
     create_from_event(event)
   end
@@ -37,7 +40,8 @@ class Post
 private
 
   def on_blog_post_published(event)
-    @guid, @title, @content, @published_at = event.guid, event.title, event.content, event.published_at
+    @guid, @title, @published_at = event.guid, event.title, event.published_at
+    @content = Content.new(event.raw_content, event.html_content)
     @comments = []
   end
   

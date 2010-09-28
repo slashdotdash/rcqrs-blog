@@ -6,7 +6,7 @@ class PostReport < ActiveRecord::Base
   def self.by_slug(params)
     published.where(
       :year => params[:year], :month => params[:month], :day => params[:day], :slug => params[:slug]
-    ).first
+    ).first or raise ActiveRecord::RecordNotFound
   end
   
   def self.exists?(guid)

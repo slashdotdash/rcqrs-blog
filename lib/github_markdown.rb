@@ -1,6 +1,8 @@
 require 'rdiscount'
 require 'digest/md5'
 
+# "GitHub Flavored Markdown" (GFM)
+# http://github.github.com/github-flavored-markdown/
 class GithubMarkdown
   def self.to_html(text)
     text = gfm(text)
